@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Productos Moderno</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Catálogo de Productos</h1>
+    
+    <!-- Filtro por categoría -->
+    <select id="categoryFilter" onchange="filterProducts()">
+        <option value="all">Todas las Categorías</option>
+    </select>
+
+    <!-- Contenedor de productos -->
+    <div class="catalog" id="catalog"></div>
+
+    <!-- Paginación -->
+    <div id="pagination">
+        <button onclick="changePage(-1)">Anterior</button>
+        <span id="pageNumber">1</span>
+        <button onclick="changePage(1)">Siguiente</button>
+    </div>
+
+    <!-- Modal para mostrar la imagen ampliada -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Imagen del producto">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
