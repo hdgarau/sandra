@@ -21,12 +21,12 @@ async function loadProducts() {
             const nombre = entry["Nombre"];
             const precio = entry["Precio"];
             const categoria = entry["Categoria"];
-            const imagenLink = entry["Imagen"];
+            const imagenLink = 'images/products/' + entry["Imagen Nombre"];
             categorySet.add(categoria)
             
-            //<img src="${imagenLink}" alt="${nombre}" loading="lazy" onclick="openModal()">
             product.innerHTML = `
-                <h3 ><a href="${imagenLink}" target="_blank">${nombre}</a></h3>
+                <img src="${imagenLink}" alt="${nombre}" loading="lazy" onclick="openModal(this.src)">
+                <h3 >${nombre}</h3>
                 <p>${categoria}</p>
                 <p><a href="https://www.mercadolibre.com.ar/jm/search?as_word=${encodeURIComponent(nombre)}" target="_blank">Comparar con ML</a></p>
                 <p>Precio: $${precio}</p>
